@@ -113,7 +113,7 @@ export const forgotPassword = async(req,res)=>{
             return res.status(400).json({success:false,message:"User not found"})
         }
 
-        const resetToken = crypto.randomBytes(20).toString("hex")
+        const resetToken = crypto.randomBytes(20).toString("hex") 
         const resetTokenExpiresAt = Date.now() + 24 * 60 * 60 * 1000
         user.resetPasswordToken = resetToken
         user.resetPasswodExpiresAt = resetTokenExpiresAt
@@ -152,6 +152,23 @@ export const resetPassword = async(req,res)=>{
     } catch (error) {
         console.log("Error in reset password",error.message);
         return res.status(400).json({success:false,message:error.message})
+        
+    }
+}
+
+export const checkAuth = async(req,res)=>{
+    try {
+        const user = await User.findById(req.userId).select("-password")
+    if(!user){
+        return res.status(401).json({success:false,message:"Not authenticated"})
+    }
+    return res.status(200).json({success:true,
+        message:"User authenticated successfully",
+        user
+    })
+    } catch (error) {
+        console.log("Error in check auth",error.message);
+        return res.status(401).json({success:false,message:error.message})
         
     }
 }

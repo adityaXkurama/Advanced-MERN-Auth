@@ -8,6 +8,7 @@ import EmailVerificationPage from "./pages/EmailVerificationPage"
 import {Toaster} from 'react-hot-toast'
 import { useAuthstore } from "./store/authStore"
 import { useEffect } from "react"
+import LoadingSpinner from "./components/LoadingSpinner"
 
 const ProtectedRoute = ({children})=>{
   const {isAuthenticated,user,isLoading} = useAuthstore()
@@ -40,9 +41,8 @@ function App() {
     checkAuth()
   },[checkAuth])
 
-  console.log("isAuthenticated",isAuthenticated);
-  console.log("user",user);
-  console.log("isLoading",isLoading);
+
+  if(isCheckingAuth) return <LoadingSpinner />
   
 
   return (

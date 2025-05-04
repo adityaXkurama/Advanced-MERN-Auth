@@ -93,3 +93,54 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 </body>
 </html>
 `;
+
+export const WELCOME_EMAIL_TEMPLATE =`
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Email</title>
+  <style>
+    body {
+      background-color: #f4f4f7;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333333;
+    }
+    p {
+      color: #555555;
+      line-height: 1.6;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #999999;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Auth Company!</h1>
+    <p>Hi [UserName],</p>
+    <p>We’re thrilled to have you with us. Thank you for joining [YourAppName] — we hope you enjoy your experience.</p>
+    <p>If you have any questions or need help getting started, feel free to reach out.</p>
+    <p>Cheers,<br>The Auth Company Team</p>
+    <div class="footer">
+      &copy; [Year] [YourAppName]. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
+`

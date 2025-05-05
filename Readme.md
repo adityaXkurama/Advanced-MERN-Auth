@@ -27,13 +27,13 @@ A complete user authentication system built with the **MERN stack** (MongoDB, Ex
 
 ## 📸 Screenshots 
 
-![SignUp Page](screenshot\signup.png)
+![SignUp Page](signup.png)
 
 ---
 
-![Login Page](screenshot\login.png)
+![Login Page](login.png)
 
 ---
-![Forgot-Password Page](screenshot\forgot-password.png)
+![Forgot-Password Page](forgot-password.png)
 
 ---
